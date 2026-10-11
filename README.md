@@ -26,11 +26,11 @@ uv tool install google-colab-cli
 python cloud/colab_cli_windows_patch.py        # 只有 Windows 需要
 colab usage                                    # 登入有 Google AI 方案的帳號（瀏覽器授權，自己做）
 python setup/detect_hardware.py                # 看每個元件建議在本機還是雲端跑
-python cloud/colab_h3.py start                 # 開 G4、裝 H3
+python cloud/colab_h3.py start                 # 開 G4、完整安裝（同第一份完整版，約 10.5 分鐘）；只要 H3 加 --h3-only（約 3.7 分鐘）
 python cloud/colab_h3.py batch <你的分鏡>/spec.json ...
 python cloud/colab_h3.py stop
 ```
-本機什麼都跑不動：`python cloud/colab_h3.py full-setup` → `smoke` → `film pipeline/template_local <stage…>`（見 [cloud/README.md](cloud/README.md) §3）。2026-10-10 一個沒看過本專案的 agent 只看這份 repo，用全雲端模式約 54 分鐘、約 8 個運算單元做出範本短片（38.5 秒 1080p）。
+本機什麼都跑不動：`python cloud/colab_h3.py start` → `smoke` → `film pipeline/template_local <stage…>`（見 [cloud/README.md](cloud/README.md) §3）。2026-10-10 一個沒看過本專案的 agent 只看這份 repo，用全雲端模式約 54 分鐘、約 8 個運算單元做出範本短片（38.5 秒 1080p）。
 
 > 下面第 2–4 節是四份 repo 共用的本機流程說明（裝 ComfyUI、`C:\AI` 路徑、`configs\profile.cmd`）。**Colab 版只要做你本機要跑的那部分**；完全不在本機跑的人，直接照上面的三分鐘上手和 [cloud/README.md](cloud/README.md)。
 
